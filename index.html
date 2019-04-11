@@ -13,6 +13,9 @@
     <!-- Fontawesome CSS Import -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
+    <!-- Import Animate.CSS -->
+    <link rel="stylesheet" href="css/animate.css">
+
   </head>
 
   <body>
@@ -22,19 +25,19 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <!-- Logo -->
       <div class="flex-grow-1 d-flex">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand animated fadeIn" href="index.html">
             <img src="img/logo.png" width="48px" height="48px">
             uploadFile
         </a>
       </div>
 
       <!--Collapse Navbar -->
-      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#collapse-it" >
+      <button class="navbar-toggler navbar-toggler-right animated fadeIn" type="button" data-toggle="collapse" data-target="#collapse-it" >
           <i class="fas fa-bars"></i>
       </button>
 
       <!-- Links -->
-      <div class="navbar-collapse collapse flex-grow-1 text-center" id="collapse-it">
+      <div class="navbar-collapse collapse flex-grow-1 text-center animated fadeIn" id="collapse-it">
         <ul class="navbar-nav ml-auto ">
             <li class="nav-item active">
                 <a href="#" class="nav-link">Home</a>
@@ -51,11 +54,11 @@
 
             <!-- Buttons -->
             <li>
-              <button type="button" class="btn btn-primary" id="loginButton"><i class="fas fa-key"></i> Login</button>
+              <button type="button" class="btn btn-primary" id="loginButton" data-toggle="modal" data-target="#loginModal"><i class="fas fa-key"></i> Login</button>
             </li>
               &nbsp;
             <li>
-              <button type="button" class="btn btn-success" id="registerButton"><i class="fas fa-user-plus"></i> Register</button>
+              <button type="button" class="btn btn-success" id="registerButton" data-toggle="modal" data-target="#registerModal"><i class="fas fa-user-plus"></i> Registrieren</button>
             </li>
             <!-- Button ends -->
         </ul>
@@ -66,9 +69,9 @@
 
     <!-- Header container -->
     <div class="container-fluid flex-grow-1 h-100 mh-100" style="background-image: linear-gradient(to right, #4b6cb7, #182848);background-size:cover;">
-        <h1 class="text-center font-weight-bold" style="color: #fff;"><br>Deine Dokumente gehören dir.</h1>
+        <h1 class="text-center font-weight-bold delay animated fadeInUp" style="color: #fff;"><br>Deine Dokumente gehören dir.</h1>
         <br><br><br>
-          <img src="img/header_img.png" class="mx-auto d-block" style="max-width:100%; width:100%;">
+          <img src="img/header_img.png" class="mx-auto d-block delay animated fadeInUpBig" style="max-width:100%; width:100%;">
         <br><br><br><br><br><br>
     </div>
 
@@ -80,9 +83,85 @@
       </div>
     </footer>
 
-    <!-- Login-Popup Modal TODO!!!-->
+    <!-- Login-Popup Modal-->
+    <div id="loginModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content text-center">
+          <div class="modal-header bg-light">
+            <h4 class="modal-title text-center" >Login</h4>
+            <button type="button" class="close" data-dismiss="modal"><i class="fas fa-times"></i></button>
+          </div>
+          <div class="modal-body text-center">
+            <p class="text-center">Willkommen zurück &#128512;</p>
+            <br>
+            <div class="form-group">
+              <h5>E-Mail</h5>
+              <input type="email" class="form-control" id="mailInput" aria-describedby="emailHelp" placeholder="max@mustermann.de">
+            </div>
+            <br>
+            <div class="form-group">
+              <h5>Passwort</h5>
+              <input type="password" class="form-control" id="pwInput" placeholder="**********">
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success" id="registerButton"><i class="fas fa-key"></i> Login</button>
+          </div>
+          <div class="bg-light">
+            <p> Wir geben Ihre Daten nie weiter! Versprochen!</p>
+          </div>
+        </div>
+        </div>
+      </div>
 
     <!-- Register-Popup Modal TODO!!! -->
+    <div id="registerModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content text-center">
+          <div class="modal-header bg-light">
+            <h4 class="modal-title text-center" >Registrieren</h4>
+            <button type="button" class="close" data-dismiss="modal"><i class="fas fa-times"></i></button>
+          </div>
+          <div class="modal-body text-center">
+            <p class="text-center">Herzlich Willkommen &#128587;</p>
+            <br>
+            <div class="container">
+              <div class="row">
+                <div class="col">
+                  <h5>Vorname</h5>
+                  <input type="text" class="form-control" id="surname" placeholder="Max">
+                </div>
+                <div class="col">
+                  <h5>Nachname</h5>
+                  <input type="text" class="form-control" id="firstname" placeholder="Mustermann">
+                </div>
+              </div>
+              <br>
+            </div>
+            <div class="form-group">
+              <h5>E-Mail</h5>
+              <input type="email" class="form-control" id="mailInput" placeholder="max@mustermann.de">
+            </div>
+            <br>
+            <div class="form-group">
+              <h5>Passwort</h5>
+              <input type="password" class="form-control" id="pwInput" placeholder="**********">
+            </div>
+            <br>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="validation">
+              <label class="form-check-label" for="exampleCheck1">Ich stimme den <a href="#">AGB´s</a> und <a href="#"> Nutzungsbedingungen</a> zu.</label>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success" id="registerButton"><i class="fas fa-check"></i> Registrieren</button>
+          </div>
+
+          <div class="bg-light">
+            <br>
+            <p> Wir geben Ihre Daten nie weiter! Versprochen!</p>
+          </div>
+        </div>
+        </div>
+      </div>
 
     <!-- Bootstrap JS Import-->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

@@ -15,6 +15,17 @@
 
 }
 
+.delay {
+  -animation-delay: 0.4s;
+  -webkit-animation-delay: 0.4s;
+  -moz-animation-delay: 0.4s;
+}
+
+.delay-low {
+  -animation-delay: 0.6s;
+  -webkit-animation-delay: 0.6s;
+  -moz-animation-delay: 0.6s;
+}
 /* 4. Home- Modal PopUp CSS */
 
 /* 4.1. Home- Modal Login CSS */
